@@ -17,6 +17,6 @@ def caesar():
     table = str.maketrans(alphabet, shifted_alphabet)
     return message.translate(table)
 
-
-print(caesar())
+if __name__ == '__main__':
+	print(caesar())
 
