@@ -3,7 +3,7 @@ import string
 
 def caesar():
     message = input("\nPlease input your message.\n").replace(" ","").lower().strip(string.punctuation)
-    shift = int(input("What is the shift?\n "))
+    shift = int(input("What is the shift desired for the encoding?\n "))
     
     if (shift % 26 == 0):
         return("There can be no shift if divisible by 26")
