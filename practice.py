@@ -35,19 +35,42 @@ if __name__ == '__main__':
 
 input_string = "aaaabbbcca"
 
+from itertools import groupby
+[(k, len(list(g))) for k, g in groupby(input_string)]
 
-def countchars(input_string):
-    result = []
-    count = 1
+############################################################################################################################################
+# Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+############################################################################################################################################
 
-    for i, letter in enumerate(input_string):
-        if len(input_string) > i + 1 and letter == input_string[i + 1]:
-            count += 1
-        else:
-            result.append((letter, count))
-            count = 1
+s = "Revese all of the words in this string."
 
-    return result
+class Solution(object):    
+    def reverseWords(self, s: 'str') -> 'str':
+        return " ".join(i[::-1] for i in s.split())
+
+my_solution = Solution()
+my_solution.reverseWords(s)    
 
 
-countchars(input_string)
+############################################################################################################################################
+# Find out if the same value makes up at least 50% of the total elements in a list
+############################################################################################################################################
+
+from collections import Counter
+
+test = [1,2,3,4,5,2,2,2,2,5]
+
+def fifty(*args):
+    c = Counter(test).most_common(1)
+    for key,value in c:
+        k = key
+        v = value
+    percent = v / len(test)
+    if percent >= .50:
+        print(f"The list is {round(percent, 2)}% full. {k} was found {v} times out of {len(test)} total elements")
+    else:
+        print(f"The list is {round(percent, 2)}% full. {k} was found {v} times out of {len(test)} total elements")
+
+
+if __name__ == "__main__":
+    fifty()
