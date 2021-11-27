@@ -74,3 +74,17 @@ def fifty(*args):
 
 if __name__ == "__main__":
     fifty()
+
+############################################################################################################################################
+# Find all substrings in string, including overlap
+############################################################################################################################################
+
+# Find all substrings in string, including overlap
+ini_str = "GeeksforGeeksforGeeksforGeeks"
+sub_str = 'GeeksforGeeks'
+ 
+# Count of substrings using startswith 
+res = sum(1 for i in range(len(ini_str)) if ini_str.startswith(sub_str, i)) 
+
+print(f"Number of substrings {sub_str} found: {res} ")
+
